@@ -3,8 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confere Aí - Natureza Curiousa</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Confere Aí - Natureza Curiosa</title>
+    <style>
+        /* Configurações Gerais e Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121613;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4ade80;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.2);
+        }
+
+        .subtitulo {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .cartoes {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cartao {
+            background-color: transparent;
+            width: 280px;
+            height: 350px;
+            perspective: 1000px;
+        }
+
+        .cartao-interno {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .cartao:hover .cartao-interno {
+            transform: rotateY(180deg);
+        }
+
+        .cartao-frente, .cartao-verso {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .cartao-frente {
+            background-color: #1e2521;
+            border: 1px solid #2e3832;
+        }
+
+        .cartao-frente h3 {
+            color: #4ade80;
+            margin: 15px 0 10px 0;
+        }
+
+        .cartao-frente p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.4;
+        }
+
+        .emoji {
+            font-size: 3rem;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.1));
+        }
+
+        .cartao-verso {
+            background-color: #064e3b;
+            color: #f8fafc;
+            transform: rotateY(180deg);
+            border: 1px solid #047857;
+        }
+
+        .cartao-verso h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: #facc15;
+            text-shadow: 0 0 8px rgba(250, 204, 21, 0.3);
+        }
+
+        .cartao-verso p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+        }
+    </style>
 </head>
 <body>
     <main class="container">
